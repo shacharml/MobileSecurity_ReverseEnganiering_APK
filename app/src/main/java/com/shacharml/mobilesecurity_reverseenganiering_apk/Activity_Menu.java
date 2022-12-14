@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
@@ -30,9 +32,20 @@ public class Activity_Menu extends AppCompatActivity {
     private void initViews() {
         this.menu_BTN_start.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Activity_Menu.this.makeServerCall();
+                Log.d("pttt", "menu_BTN_start is clicked");
+                if(checkIdLength())
+                    Activity_Menu.this.makeServerCall();
+                else
+                    Toast.makeText(Activity_Menu.this, "insert a 9 numbers Id", Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    private boolean checkIdLength() {
+        if(Activity_Menu.this.menu_EDT_id.getText().toString().length() < 9 ||
+                Activity_Menu.this.menu_EDT_id.getText().toString().length() > 9)
+            return false;
+        else return true;
     }
 
     private void findViews() {
