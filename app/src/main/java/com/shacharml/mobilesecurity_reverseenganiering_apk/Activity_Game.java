@@ -1,10 +1,13 @@
 package com.shacharml.mobilesecurity_reverseenganiering_apk;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Arrays;
 
 public class Activity_Game extends AppCompatActivity {
     public static final String EXTRA_ID = "EXTRA_ID";

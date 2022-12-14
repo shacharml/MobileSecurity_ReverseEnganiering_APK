@@ -73,6 +73,7 @@ public class Activity_Menu extends AppCompatActivity {
         Intent intent = new Intent(getBaseContext(), Activity_Game.class);
         intent.putExtra(Activity_Game.EXTRA_ID, id);
         intent.putExtra(Activity_Game.EXTRA_STATE, state);
+        Log.d("pttt", state);
         startActivity(intent);
     }
 
